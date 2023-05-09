@@ -41,8 +41,21 @@ function checkAnswer(){
 
 }
 
+/**
+ * Gets the operands (the number and the operator (plus, mitus etc)
+ * directly from the DOM, and returns the correct answer.
+ */
 function calculateCorrectAnswer(){
+    let operand1 = parseInt(document.getElementById("operand1").innerText);
+    let operand2 = parseInt(document.getElementById("operand2").innerText);
+    let operator = document.getElementById("operator").innerText;
 
+    if(operator === "+"){
+        return [operand1 + operand2, "addition"];
+    } else {
+        alert(`Uninplemented operator ${operator}`);
+        throw `Uninplemented operator ${operator}. Aborting!`;
+    }
 }
 function incrementScore(){
 
