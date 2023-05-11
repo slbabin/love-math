@@ -63,10 +63,12 @@ function checkAnswer(){
     let isCorrect = userAnswer === calculatedAnswer [0];
 
     if (isCorrect){
-        alert("Hey! You got it right! :D")
+        document.getElementById("results").innerText = "Hey! You got it right! :D";
+        //alert("Hey! You got it right! :D")
         incrementScore();
     } else {
-        alert(`Awwww... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}`)
+        document.getElementById("results").innerText = `Awwww... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}`;
+        //alert(`Awwww... you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}`)
         incrementWrongAnswer();
     }
 
@@ -135,7 +137,10 @@ function displayMultiplyQuestion(operand1, operand2){
 }
 
 function displayDivisionQuestion(operand1, operand2){
-    document.getElementById('operand1').textContent = operand1 > operand2 ? operand1 : operand2;
-    document.getElementById('operand2').textContent = operand1 > operand2 ? operand2: operand1;
+     
+    operand1 = operand1*operand2;
+
+    document.getElementById('operand1').textContent = operand1;
+    document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = "/";
 }
